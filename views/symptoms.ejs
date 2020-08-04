@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+    <div class="flex-container">
+        <div class="container">
+            <h1>Check you safety</h1>
+            <p class="lead">Enter your details to check, we have <strong>
+    </strong>  patients at low and  <strong>
+
+  </strong> patients at high risk.</p>
+            <form action="/symptoms" method="POST">
+              <input type="email" style="color:white" class="form" placeholder="Enter you email" name="email" value='<%= qemail %>'>
+              <input type='text' style="color:white" class='form' placeholder='Enter symptoms' name='symptoms'>
+              <br/>
+              <br/>
+              <button>check safety</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>

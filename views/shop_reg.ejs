@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+<style>
+
+ body{  background: linear-gradient(to right, #17174a, #13133b, #94fffe, #00BFFF);
+    	background-size: 500% 500%;
+   	  background-position: 51% 60%;	  }
+ container-lg{color:#17174a;}
+ p{color:#17174a;}
+ h1{color:#17174a;}
+</style>
+
+
+<div class="container-lg">
+    <div class="container">
+        <h1>Register your shop</h1>
+        <br>
+
+        <form action="/shopregister" method="POST">
+          <input type="number" class="form" placeholder="Enter your shop no" name="shop_id">
+          <input type="text" class="form" placeholder="Enter your shop name" name="shop_name">
+          <br>
+
+          <button >REGISTER</button>
+        </form>
+    </div>
+</div>
+
+
+  <%- include("partials/footer") %>

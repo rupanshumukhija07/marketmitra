@@ -1,0 +1,38 @@
+<%- include("partials/header") %>
+<style>
+
+  body {
+      /* background-image: url('safe.jpeg'); */
+      background-size: cover;
+  }
+
+
+</style>
+
+<h1  style=" color:#E6E6FA"> STAY HOME,STAY SAFE!</h1>
+<div class="mine" >
+  <p style= "color:white" class="lead" >According to the Govt. of  INDIA, markets are now opened with several terms and conditions applied.
+  necessary for us to maintain a record of customers for future safety. Kindly, register before entering.</p>
+</div>
+<br/>
+<br/>
+
+
+
+    <div class="card-deck">
+    <% results.forEach(res=>{ %>
+    <div class="card text-white bg-info mb-3 "  style=" margin: 10px auto; max-width: 18rem;">
+    <div class="card-header">ACTIVE CASES</div>
+  <div class="card-body">
+    <h5 class="card-title"><%= res.state %></h5>
+    <p class="card-text"><%= res.state_count %></p>
+  </div>
+</div>
+
+  <%  }) %>
+</div>
+
+<br/>
+<br/>
+<button style= "background-color:rgb(218, 237, 244) !important; color:#000080" class="register" type="submit" onclick="document.location = '/home'" name="Register">REGISTER</button>
+    <%- include("partials/footer") %>

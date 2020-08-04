@@ -1,0 +1,88 @@
+<%- include("partials/header") %>
+<style>
+
+
+ body{  background: linear-gradient(to right, #17174a, #13133b, #94fffe, #00BFFF);
+    	background-size: 500% 500%;
+   	background-position: 51% 60%; 	  }
+ container-lg{color:#17174a;}
+ p{color:#17174a;}
+ h1{color:#17174a;}
+</style>
+
+
+
+    <div class="container-lg">
+        <div class="container">
+            <h1>Safety Check</h1>
+            <p class="lead">Enter your details to check, we have <strong>
+        <%= results[0][0].count  %>
+    </strong>  patients at LOW risk,
+
+    <strong>
+<%= results[1][0].count  %>
+</strong>  patients at HIGH risk</p>
+
+            <form action="/register" method="POST">
+              <input type="email" class="form" placeholder="Enter you email" name="email">
+              <input type="text" class="form" placeholder="Enter you name" name="name">
+              <input type="number" class="form" placeholder="Enter you phone number" name="phoneNumber">
+              <input type="text" class="form" placeholder="City" name="city">
+
+              <select name="state" id="state" class="form">
+                <option value='Andhra Pradesh'>Andhra Pradesh</option>
+                <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
+                <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
+                <option value='Assam'>Assam</option>
+                <option value='Bihar'>Bihar</option>
+                <option value='Chandigarh'>Chandigarh</option>
+                <option value='Chhattisgarh'>Chhattisgarh</option>
+                <option value='Dadar and Nagar Havel'>Dadar and Nagar Haveli</option>
+                <option value='Daman and Diu'>Daman and Diu</option>
+                <option value='Delhi'>Delhi</option>
+                <option value='Lakshadweep'>Lakshadweep</option>
+                <option value='Puducherry'>Puducherry</option>
+                <option value='Goa'>Goa</option>
+                <option value='Gujarat'>Gujarat</option>
+                <option value='Haryana'>Haryana</option>
+                <option value='Himachal Pradesh'>Himachal Pradesh</option>
+                <option value='Jammu and Kashmir'>Jammu and Kashmir</option>
+                <option value='Jharkhand'>Jharkhand</option>
+                <option value='Karnataka'>Karnataka</option>
+                <option value='Kerala'>Kerala</option>
+                <option value='Madhya Pradesh'>Madhya Pradesh</option>
+                <option value='Maharashtra'>Maharashtra</option>
+                <option value='Manipur'>Manipur</option>
+                <option value='Meghalaya'>Meghalaya</option>
+                <option value='Mizoram'>Mizoram</option>
+                <option value='Nagaland'>Nagaland</option>
+                <option value='Odisha'>Odisha</option>
+                <option value='Punjab'>Punjab</option>
+                <option value='Rajasthan'>Rajasthan</option>
+                <option value='Sikkim'>Sikkim</option>
+                <option value='Tamil Nadu'>Tamil Nadu</option>
+                <option value='Telangana'>Telangana</option>
+                <option value='Tripura'>Tripura</option>
+                <option value='Uttar Pradesh'>Uttar Pradesh</option>
+                <option value='Uttarakhand'>Uttarakhand</option>
+                <option value='West Bengal'>West Bengal</option>
+              </select>
+              <br/>
+
+              <select name="shopNumber" id="shops" class="form">
+                  <% results[2].forEach(res=>{ %>
+                        <option value='<%=res.shop_id%>'><%=res.shop_id%>. <%=res.shop_name %></option>
+                                        <% }) %>
+              </select>
+              <br/>
+
+              <label for="travelHistory" style="color:#17174a;margin-top:20px; font-size: 1.2em;"><input class= "box" type="checkbox" class="form" size="2" name="travelHistory"><strong>Have you traveled in the past 2 months?‏‏‎ ‏‏‎ </strong></label>
+
+              <br>
+<br/>
+              <button >CHECK SAFETY</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>
